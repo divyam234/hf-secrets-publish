@@ -15,7 +15,7 @@ A Chrome extension that simplifies the process of publishing secrets to your Hug
 
 1. Clone this repository or download the source code:
    ```
-   git clone https://github.com/yourusername/hf-secrets-publisher.git
+   git clone https://github.com/yourusername/hf-secrets-publish.git
    ```
 2. Open Google Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" in the top right corner
