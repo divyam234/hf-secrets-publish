@@ -15,15 +15,11 @@ A Chrome extension that simplifies the process of publishing secrets to your Hug
 
 1. Clone this repository or download the source code:
    ```
-   git clone https://github.com/yourusername/hf-secrets-publish.git
+   git clone https://github.com/divyam234/hf-secrets-publish.git
    ```
 2. Open Google Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" in the top right corner
 4. Click "Load unpacked" and select the directory containing the extension files
-
-### From Chrome Web Store
-
-*Coming soon*
 
 ## Usage
 
