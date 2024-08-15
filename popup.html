@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hugging Face Secrets Publisher</title>
+  <style>
+    :root {
+      --hf-primary: #FF9D00;
+      --hf-primary-dark: #FF7D00;
+      --hf-background: #1A1A1A;
+      --hf-surface: #0b0f19;
+      --hf-text: #FFFFFF;
+      --hf-text-secondary: #BBBBBB;
+      --hf-border: #444444;
+    }
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: var(--hf-background);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--hf-text);
+    }
+    .container {
+      background-color: var(--hf-surface);
+      padding: 1.5rem;
+      width: 320px;
+      max-width: 100%;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      color: var(--hf-primary);
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+    label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--hf-text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--hf-border);
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+      background-color: var(--hf-background);
+      color: var(--hf-text);
+    }
+    textarea:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--hf-primary);
+    }
+    textarea {
+      height: 10rem;
+      resize: vertical;
+    }
+    input[readonly] {
+      background-color: var(--hf-surface);
+    }
+    button {
+      width: 100%;
+      background-color: var(--hf-primary);
+      color: var(--hf-background);
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: var(--hf-primary-dark);
+    }
+    button:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 157, 0, 0.5);
+    }
+    button:disabled {
+      background-color: #634C25;
+      cursor: not-allowed;
+    }
+    #status {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    .error {
+      color: #F87171;
+    }
+    .success {
+      color: #34D399;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>HF Secrets Publisher</h2>
+    <form id="secretsForm">
+      <div class="form-group">
+        <label for="envContent">Paste .env file content</label>
+        <textarea id="envContent" placeholder="KEY1=value1&#10;KEY2=value2"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="modelSpace">Model Space</label>
+        <input type="text" id="modelSpace" placeholder="Automatically detected" readonly>
+      </div>
+      <button type="submit" id="publishButton">Publish Secrets</button>
+    </form>
+    <div id="status"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

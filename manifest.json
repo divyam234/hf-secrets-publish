@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Hugging Face Secrets Publisher",
+    "version": "1.0",
+    "description": "Publishes .env file contents to Hugging Face secrets",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://huggingface.co/*"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["inject.js"],
+        "matches": ["https://huggingface.co/*"]
+      }
+    ]
+  }
